@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Algo>
-    <description courant="AFFICHER maxi" texte=""/>
+    <description texte="" courant="AFFICHER maxi"/>
     <extension extnom="inactif"/>
     <fonction fctetat="inactif" fctcode=""/>
     <F2 F2lignes="" F2defaut="" F2para="" F2etat="inactif"/>
-    <repere repcode="-10#10#-10#10#2#2" repetat="inactif"/>
-    <param maxBoucle="500000" totalAffichages="1000" epaisseurLigne="2" nbDecimales="8" totalBoucles="5000000" arrondiAuto="vrai" epaisseurPoint="2"/>
-    <item code="200#declarationfonctions" algoitem="FONCTIONS_UTILISEES"/>
-    <item code="100#declarationsvariables" algoitem="VARIABLES">
-        <item code="1#LISTE#tableau" algoitem="tableau EST_DU_TYPE LISTE"/>
-        <item code="1#NOMBRE#i" algoitem="i EST_DU_TYPE NOMBRE"/>
-        <item code="1#NOMBRE#maxi" algoitem="maxi EST_DU_TYPE NOMBRE"/>
+    <repere repetat="inactif" repcode="-10#10#-10#10#2#2"/>
+    <param arrondiAuto="vrai" epaisseurPoint="2" nbDecimales="8" totalAffichages="1000" epaisseurLigne="2" maxBoucle="500000" totalBoucles="5000000"/>
+    <item algoitem="FONCTIONS_UTILISEES" code="200#declarationfonctions"/>
+    <item algoitem="VARIABLES" code="100#declarationsvariables">
+        <item algoitem="tableau EST_DU_TYPE LISTE" code="1#LISTE#tableau"/>
+        <item algoitem="i EST_DU_TYPE NOMBRE" code="1#NOMBRE#i"/>
+        <item algoitem="maxi EST_DU_TYPE NOMBRE" code="1#NOMBRE#maxi"/>
+        <item algoitem="n_liste EST_DU_TYPE NOMBRE" code="1#NOMBRE#n_liste"/>
     </item>
-    <item code="101#debutalgo" algoitem="DEBUT_ALGORITHME">
-        <item code="12#i#0#3" algoitem="POUR i ALLANT_DE 0 A 3">
-            <item code="13#debutpour" algoitem="DEBUT_POUR"/>
-            <item code="2#tableau#i" algoitem="LIRE tableau[i]"/>
-            <item code="14#finpour" algoitem="FIN_POUR"/>
+    <item algoitem="DEBUT_ALGORITHME" code="101#debutalgo">
+        <item algoitem="AFFICHER &quot;Determiner la taille de la liste&quot;" code="4#Determiner la taille de la liste#0"/>
+        <item algoitem="LIRE n_liste" code="2#n_liste#pasliste"/>
+        <item algoitem="POUR i ALLANT_DE 0 A n_liste" code="12#i#0#n_liste">
+            <item algoitem="DEBUT_POUR" code="13#debutpour"/>
+            <item algoitem="LIRE tableau[i]" code="2#tableau#i"/>
+            <item algoitem="FIN_POUR" code="14#finpour"/>
         </item>
-        <item code="5#maxi#ALGOBOX_MAXIMUM(tableau,0,3)#pasliste" algoitem="maxi PREND_LA_VALEUR ALGOBOX_MAXIMUM(tableau,0,3)"/>
-        <item code="4#La plus grande valleur du tableau est #0" algoitem="AFFICHER &quot;La plus grande valleur du tableau est &quot;"/>
-        <item code="3#maxi#1#pasliste" algoitem="AFFICHER maxi"/>
+        <item algoitem="maxi PREND_LA_VALEUR ALGOBOX_MAXIMUM(tableau,0,n_liste)" code="5#maxi#ALGOBOX_MAXIMUM(tableau,0,n_liste)#pasliste"/>
+        <item algoitem="AFFICHER &quot;La plus grande valeur du tableau est &quot;" code="4#La plus grande valeur du tableau est #0"/>
+        <item algoitem="AFFICHER maxi" code="3#maxi#1#pasliste"/>
     </item>
-    <item code="102#finalgo" algoitem="FIN_ALGORITHME"/>
+    <item algoitem="FIN_ALGORITHME" code="102#finalgo"/>
 </Algo>

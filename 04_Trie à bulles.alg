@@ -1,49 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Algo>
-    <description courant="FIN_POUR" texte=""/>
+    <description texte="" courant="FIN_POUR"/>
     <extension extnom="inactif"/>
     <fonction fctetat="inactif" fctcode=""/>
     <F2 F2lignes="" F2defaut="" F2para="" F2etat="inactif"/>
-    <repere repcode="-10#10#-10#10#2#2" repetat="inactif"/>
-    <param maxBoucle="500000" totalAffichages="1000" epaisseurLigne="2" nbDecimales="8" totalBoucles="5000000" arrondiAuto="vrai" epaisseurPoint="2"/>
-    <item code="200#declarationfonctions" algoitem="FONCTIONS_UTILISEES"/>
-    <item code="100#declarationsvariables" algoitem="VARIABLES">
-        <item code="1#LISTE#tab" algoitem="tab EST_DU_TYPE LISTE"/>
-        <item code="1#NOMBRE#n_Liste" algoitem="n_Liste EST_DU_TYPE NOMBRE"/>
-        <item code="1#NOMBRE#i" algoitem="i EST_DU_TYPE NOMBRE"/>
-        <item code="1#NOMBRE#j" algoitem="j EST_DU_TYPE NOMBRE"/>
-        <item code="1#NOMBRE#temp" algoitem="temp EST_DU_TYPE NOMBRE"/>
+    <repere repetat="inactif" repcode="-10#10#-10#10#2#2"/>
+    <param arrondiAuto="vrai" epaisseurPoint="2" nbDecimales="8" totalAffichages="1000" epaisseurLigne="2" maxBoucle="500000" totalBoucles="5000000"/>
+    <item algoitem="FONCTIONS_UTILISEES" code="200#declarationfonctions"/>
+    <item algoitem="VARIABLES" code="100#declarationsvariables">
+        <item algoitem="tab EST_DU_TYPE LISTE" code="1#LISTE#tab"/>
+        <item algoitem="n_Liste EST_DU_TYPE NOMBRE" code="1#NOMBRE#n_Liste"/>
+        <item algoitem="i EST_DU_TYPE NOMBRE" code="1#NOMBRE#i"/>
+        <item algoitem="j EST_DU_TYPE NOMBRE" code="1#NOMBRE#j"/>
+        <item algoitem="temp EST_DU_TYPE NOMBRE" code="1#NOMBRE#temp"/>
     </item>
-    <item code="101#debutalgo" algoitem="DEBUT_ALGORITHME">
-        <item code="2#n_Liste#pasliste" algoitem="LIRE n_Liste"/>
-        <item code="19# Initialiser le tableau et entrer les éléments" algoitem="// Initialiser le tableau et entrer les éléments"/>
-        <item code="12#i#1#n_Liste" algoitem="POUR i ALLANT_DE 1 A n_Liste">
-            <item code="13#debutpour" algoitem="DEBUT_POUR"/>
-            <item code="2#tab#i" algoitem="LIRE tab[i]"/>
-            <item code="14#finpour" algoitem="FIN_POUR"/>
+    <item algoitem="DEBUT_ALGORITHME" code="101#debutalgo">
+        <item algoitem="AFFICHER &quot;Determiner la taille de la liste&quot;" code="4#Determiner la taille de la liste#0"/>
+        <item algoitem="LIRE n_Liste" code="2#n_Liste#pasliste"/>
+        <item algoitem="// Initialiser le tableau et entrer les éléments" code="19# Initialiser le tableau et entrer les éléments"/>
+        <item algoitem="POUR i ALLANT_DE 1 A n_Liste" code="12#i#1#n_Liste">
+            <item algoitem="DEBUT_POUR" code="13#debutpour"/>
+            <item algoitem="LIRE tab[i]" code="2#tab#i"/>
+            <item algoitem="FIN_POUR" code="14#finpour"/>
         </item>
-        <item code="19# Tri à bulles pour ordonner le tableau dans l'ordre croissant" algoitem="// Tri à bulles pour ordonner le tableau dans l'ordre croissant"/>
-        <item code="12#i#1#n_Liste-1" algoitem="POUR i ALLANT_DE 1 A n_Liste-1">
-            <item code="13#debutpour" algoitem="DEBUT_POUR"/>
-            <item code="12#j#1#n_Liste-1" algoitem="POUR j ALLANT_DE 1 A n_Liste-1">
-                <item code="13#debutpour" algoitem="DEBUT_POUR"/>
-                <item code="6#tab[j]>tab[j+1]" algoitem="SI (tab[j]>tab[j+1]) ALORS">
-                    <item code="7#debutsi" algoitem="DEBUT_SI"/>
-                    <item code="5#temp#tab[j]#pasliste" algoitem="temp PREND_LA_VALEUR tab[j]"/>
-                    <item code="5#tab#tab[j+1]#j" algoitem="tab[j] PREND_LA_VALEUR tab[j+1]"/>
-                    <item code="5#tab#temp#j+1" algoitem="tab[j+1] PREND_LA_VALEUR temp"/>
-                    <item code="8#finsi" algoitem="FIN_SI"/>
+        <item algoitem="// Tri à bulles pour ordonner le tableau dans l'ordre croissant" code="19# Tri à bulles pour ordonner le tableau dans l'ordre croissant"/>
+        <item algoitem="POUR i ALLANT_DE 1 A n_Liste-1" code="12#i#1#n_Liste-1">
+            <item algoitem="DEBUT_POUR" code="13#debutpour"/>
+            <item algoitem="POUR j ALLANT_DE 1 A n_Liste-1" code="12#j#1#n_Liste-1">
+                <item algoitem="DEBUT_POUR" code="13#debutpour"/>
+                <item algoitem="SI (tab[j]>tab[j+1]) ALORS" code="6#tab[j]>tab[j+1]">
+                    <item algoitem="DEBUT_SI" code="7#debutsi"/>
+                    <item algoitem="temp PREND_LA_VALEUR tab[j]" code="5#temp#tab[j]#pasliste"/>
+                    <item algoitem="tab[j] PREND_LA_VALEUR tab[j+1]" code="5#tab#tab[j+1]#j"/>
+                    <item algoitem="tab[j+1] PREND_LA_VALEUR temp" code="5#tab#temp#j+1"/>
+                    <item algoitem="FIN_SI" code="8#finsi"/>
                 </item>
-                <item code="14#finpour" algoitem="FIN_POUR"/>
+                <item algoitem="FIN_POUR" code="14#finpour"/>
             </item>
-            <item code="14#finpour" algoitem="FIN_POUR"/>
+            <item algoitem="FIN_POUR" code="14#finpour"/>
         </item>
-        <item code="4#Tableau trié:#1" algoitem="AFFICHER &quot;Tableau trié:&quot;"/>
-        <item code="12#i#1#n_Liste" algoitem="POUR i ALLANT_DE 1 A n_Liste">
-            <item code="13#debutpour" algoitem="DEBUT_POUR"/>
-            <item code="3#tab#1# i " algoitem="AFFICHER tab[ i ]"/>
-            <item code="14#finpour" algoitem="FIN_POUR"/>
+        <item algoitem="AFFICHER &quot;Tableau trié:&quot;" code="4#Tableau trié:#1"/>
+        <item algoitem="POUR i ALLANT_DE 1 A n_Liste" code="12#i#1#n_Liste">
+            <item algoitem="DEBUT_POUR" code="13#debutpour"/>
+            <item algoitem="AFFICHER tab[ i ]" code="3#tab#1# i "/>
+            <item algoitem="FIN_POUR" code="14#finpour"/>
         </item>
     </item>
-    <item code="102#finalgo" algoitem="FIN_ALGORITHME"/>
+    <item algoitem="FIN_ALGORITHME" code="102#finalgo"/>
 </Algo>
